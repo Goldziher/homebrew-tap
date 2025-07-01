@@ -1,31 +1,14 @@
 class Uncomment < Formula
   desc "Fast, accurate comment removal tool using tree-sitter"
   homepage "https://github.com/Goldziher/uncomment"
-  version "2.4.0"
+  url "https://github.com/Goldziher/uncomment/archive/v2.4.0.tar.gz"
+  sha256 "PLACEHOLDER_SHA256"
   license "MIT"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/uncomment/releases/download/v2.4.0/uncomment-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_AARCH64_DARWIN"
-    else
-      url "https://github.com/Goldziher/uncomment/releases/download/v2.4.0/uncomment-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_X86_64_DARWIN"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/uncomment/releases/download/v2.4.0/uncomment-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_AARCH64_LINUX"
-    else
-      url "https://github.com/Goldziher/uncomment/releases/download/v2.4.0/uncomment-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_X86_64_LINUX"
-    end
-  end
+  depends_on "rust" => :build
 
   def install
-    bin.install "uncomment"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
