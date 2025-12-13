@@ -1,8 +1,8 @@
 class Gitfluff < Formula
   desc "Commit message linter with presets and cleanup automation"
   homepage "https://github.com/Goldziher/gitfluff"
-  url "https://github.com/Goldziher/gitfluff/archive/v0.5.0.tar.gz"
-  sha256 "29377853b17b50b08f0d684e35b70fe0db01ea09e174a5a9a25bbdfb038ca483"
+  url "https://github.com/Goldziher/gitfluff/archive/v0.6.0.tar.gz"
+  sha256 "1dcf1461e45e86dfb3c4fa711811b87f9f86d88e3e7a031306e9f369b4f9df95"
   license "MIT"
 
   depends_on "rust" => :build
