@@ -1,8 +1,8 @@
 class HtmlToMarkdown < Formula
   desc "High-performance HTML to Markdown converter powered by Rust"
   homepage "https://github.com/Goldziher/html-to-markdown"
-  url "https://github.com/Goldziher/html-to-markdown/archive/v2.14.1.tar.gz"
-  sha256 "810e1f9b0228f6e7384ac4604bcfc3b190f3c94c3a22e81424d72bd533a432a8"
+  url "https://github.com/Goldziher/html-to-markdown/archive/v2.14.2.tar.gz"
+  sha256 "040f59eca723e69c498d4644ad89c97989760c60149a9227b83d7328f49be5c9"
   license "MIT"
 
   depends_on "rust" => :build
