@@ -5,21 +5,21 @@
 class AiRulez < Formula
   desc "⚡ Lightning-fast CLI tool (written in Go) for managing AI assistant rules"
   homepage "https://github.com/Goldziher/ai-rulez"
-  version "3.3.0"
+  version "3.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.0/ai-rulez_3.3.0_darwin_amd64.tar.gz"
-      sha256 "9ba34f6a2e7c0b0da5e623deb02a60bf08eeff95a96ee6be69653f3aa46938ca"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.1/ai-rulez_3.3.1_darwin_amd64.tar.gz"
+      sha256 "b1a70815cb03cd6f2707d662f5017cdfadd4d9509fa367f299efc9956d125af4"
 
       def install
         bin.install "ai-rulez"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.0/ai-rulez_3.3.0_darwin_arm64.tar.gz"
-      sha256 "f825f8bf963d8a4e7198060694180bd159f18729d3c7aea93d34b1bc60401752"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.1/ai-rulez_3.3.1_darwin_arm64.tar.gz"
+      sha256 "13eba3feb01e006afba037914c889ff55093a30efdd42b1afb78e51a2fe4c76e"
 
       def install
         bin.install "ai-rulez"
@@ -29,15 +29,15 @@ class AiRulez < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.0/ai-rulez_3.3.0_linux_amd64.tar.gz"
-      sha256 "436867c000b0442fb6012dcc2edc2fdd9afa603a4120d5a7fe018c8f88e6c389"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.1/ai-rulez_3.3.1_linux_amd64.tar.gz"
+      sha256 "3b00e24aa26d3e951b62938028c04890b9bf71d6fff988fd48206571d967928e"
       def install
         bin.install "ai-rulez"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.0/ai-rulez_3.3.0_linux_arm64.tar.gz"
-      sha256 "4d55fe54563aba4a98a10c8025177ef5c691bab7d6545a82f415c593e8cdbdc6"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v3.3.1/ai-rulez_3.3.1_linux_arm64.tar.gz"
+      sha256 "01bed8b117994dfd6fec99f4cc5203573e64acb8f64d1d2bd0165eafc9071d2f"
       def install
         bin.install "ai-rulez"
       end
