@@ -5,7 +5,7 @@ class Spikard < Formula
   desc "Polyglot API toolkit with Rust core and bindings for Python, Node.js, Ruby, and WASM"
   homepage "https://github.com/Goldziher/spikard"
   url "https://github.com/Goldziher/spikard/archive/v0.8.0.tar.gz"
-  sha256 ""
+  sha256 "bf86012ffe5de4f29d6a3fd4ace6438fbf79df8b10cab98f08fde555b5424893"
   license "MIT"
   head "https://github.com/Goldziher/spikard.git", branch: "main"
 
