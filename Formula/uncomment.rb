@@ -1,8 +1,8 @@
 class Uncomment < Formula
   desc "Fast, accurate comment removal tool using tree-sitter"
   homepage "https://github.com/Goldziher/uncomment"
-  url "https://github.com/Goldziher/uncomment/archive/v2.10.3.tar.gz"
-  sha256 "69a18bc680262ec349e395404ae4c2b8323dccc0f408b21bdecc48338a7c0e11"
+  url "https://github.com/Goldziher/uncomment/archive/v2.10.4.tar.gz"
+  sha256 "5003a0a32f18f557f7996ab090979e04dffa4c9751e293ff3b710b2b20353625"
   license "MIT"
 
   depends_on "rust" => :build
