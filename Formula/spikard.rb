@@ -5,7 +5,7 @@ class Spikard < Formula
   desc "Polyglot API toolkit with Rust core and bindings for Python, Node.js, Ruby, and WASM"
   homepage "https://github.com/Goldziher/spikard"
   url "https://github.com/Goldziher/spikard/archive/v0.10.1.tar.gz"
-  sha256 "17e7138750a820128b1bcbc36048208afa26b87659c051c9c63202ad730ea538"
+  sha256 "04011c3dc7430c2af06b5df3776f2c774f03e99df727145b51c72ab9ab314ff9"
   license "MIT"
   head "https://github.com/Goldziher/spikard.git", branch: "main"
 
@@ -20,10 +20,11 @@ class Spikard < Formula
 
 
 
+
   bottle do
     root_url "https://github.com/Goldziher/spikard/releases/download/v0.10.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bdc92bf8387fd35f956d4153ab8608a42b4c3c4a12abf5285e09398ba68d8f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "2aaae81ee381f72fbb07a1b721945d78cb826531040ba1f8e6ee4a0b59068758"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24f7ddef8b6e84a16896dbf74d1fd89e9ffa5448d5b1266080f64cd5dd625408"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b0d74e5dfe646ddc8af2e6190dd556a1f8d22a78e1bd5dbbe8c35fb0a8d4096e"
   end
 
   depends_on "pkg-config" => :build
