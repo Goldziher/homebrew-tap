@@ -4,8 +4,8 @@
 class Scythe < Formula
   desc "SQL compiler and linter - generate type-safe code from SQL"
   homepage "https://github.com/Goldziher/scythe"
-  url "https://github.com/Goldziher/scythe/archive/v0.3.0.tar.gz"
-  sha256 "b8707bb0c05135f7372e881c3aaa3f1d5a7fb8102ba3c043d6e82c0557a01b85"
+  url "https://github.com/Goldziher/scythe/archive/v0.4.0.tar.gz"
+  sha256 "c758301a9f7690bcf39aa6d6ce214aa97c08a2ab69a982e2d7e1edbd215584f9"
   license "MIT"
   head "https://github.com/Goldziher/scythe.git", branch: "main"
 
