@@ -5,21 +5,21 @@
 class Uncomment < Formula
   desc "A fast, accurate comment removal tool using tree-sitter for AST parsing"
   homepage "https://github.com/Goldziher/uncomment"
-  version "3.0.1"
+  version "3.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.1/uncomment-x86_64-apple-darwin.tar.gz"
-      sha256 "bad01152b4e9e2166229c193e10043234ec93a921e9449121a88ed033e33d75a"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.2/uncomment-x86_64-apple-darwin.tar.gz"
+      sha256 "5c9a69a9ae26c9e1469a6a87827f973e845d6b5b2d9bc038bc4ff86c6c3a11d4"
 
       define_method(:install) do
         bin.install "uncomment"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.1/uncomment-aarch64-apple-darwin.tar.gz"
-      sha256 "3dc0f156c9b654dc2663b0acb617297eee9197924b24a6b16b04cc87a8f7d087"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.2/uncomment-aarch64-apple-darwin.tar.gz"
+      sha256 "759fb010f78010d5265e3b46527156f205c414065897429c70180a1d9f703197"
 
       define_method(:install) do
         bin.install "uncomment"
@@ -29,15 +29,15 @@ class Uncomment < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.1/uncomment-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "08c20933558497d8bf1f1ea8bfae2030543bd9f2b5bb112854a490415308ab02"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.2/uncomment-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ea3526559e5220a460685e95ea0cb6685bb866070a6e19753bb835e947272104"
       define_method(:install) do
         bin.install "uncomment"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.1/uncomment-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "15c900fed6d253b92ab05469d3cd8e939da3be8a17ba4cb0673d872d945dc2c9"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.0.2/uncomment-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9885acc704dd4ed5697f868e83251b7fc99232ae184d11c4b89cb5f10568f26b"
       define_method(:install) do
         bin.install "uncomment"
       end
