@@ -4,17 +4,17 @@
 class Spikard < Formula
   desc "Polyglot API toolkit with Rust core and bindings for Python, Node.js, Ruby, and WASM"
   homepage "https://github.com/Goldziher/spikard"
-  url "https://github.com/Goldziher/spikard/archive/v0.15.4.tar.gz"
-  sha256 "c3857f89958f45a8c8ae6e5429a97ef2608a9ae3b5d8cb2824896b35a47ae7e0"
+  url "https://github.com/Goldziher/spikard/archive/v0.15.5.tar.gz"
+  sha256 "634a26a1c6cb14835ab924990a1abb93b1a3eef8e5fabc074bd5b28bb8199628"
   license "MIT"
   head "https://github.com/Goldziher/spikard.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/Goldziher/spikard/releases/download/v0.15.4"
-    sha256 cellar: :any_skip_relocation, arm64_linux: "c31a2318f9a5b8e5842da9665f74a5d2dda6c92ed3546f72bd43d73f07b58619"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec9ff5312f1fc2a2fe9f2247e337de73e4a74336f727e44b96d7e562110df474"
-    sha256 cellar: :any_skip_relocation, sequoia: "a3cc337e82a6f593a7f0938bd55a2f659f8e6abc584d7c08bd4a953d6bd870c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e54c70cd4bcdf3cbe6b09e8aa87caa52337f570482757c006ce7ae704de88cc"
+    root_url "https://github.com/Goldziher/spikard/releases/download/v0.15.5"
+    sha256 cellar: :any_skip_relocation, arm64_linux: "5dcca9ce44214cb271ed5362f3491f3b727b402eff73b9aac52b11026198ebc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd9befc2db16c594e7bdfbbb7679395a67f733e6e966fc24497f5770c18c3065"
+    sha256 cellar: :any_skip_relocation, sequoia: "1efe97ee95e02e9b3ccb22d8e81fab8c056aa780250ba80764d428cbcda10523"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d3bbfc3016b3acca0fe649891fd4ba2aa9fa03c3ec46f9231bb92e7d38d5795"
   end
 
   depends_on "pkg-config" => :build
