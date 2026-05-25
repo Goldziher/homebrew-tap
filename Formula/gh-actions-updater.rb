@@ -5,21 +5,21 @@
 class GhActionsUpdater < Formula
   desc "Fast GitHub Actions reference scanner and updater"
   homepage "https://github.com/Goldziher/gh-actions-updater"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.3/gh-actions-updater-x86_64-apple-darwin.tar.gz"
-      sha256 "4d3bfcaed466afdce3a20b26a6e082ecde03cc89882e984a24751cb71aed82d9"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.4/gh-actions-updater-x86_64-apple-darwin.tar.gz"
+      sha256 "08997f5f0b50b6fcec45f1a6d03415ed48788cb87e07fce974bfa3417c862906"
 
       define_method(:install) do
         bin.install "gau"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.3/gh-actions-updater-aarch64-apple-darwin.tar.gz"
-      sha256 "8d1e5c52f5b55b324e35591bac466f0dc6d3eae0111f971fe0c68ae3c348ceaf"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.4/gh-actions-updater-aarch64-apple-darwin.tar.gz"
+      sha256 "1da4be6aaa62891ea711780d2edb9e58ab8f2ed66a16aa9b9549c92fbc01a5e0"
 
       define_method(:install) do
         bin.install "gau"
@@ -29,15 +29,15 @@ class GhActionsUpdater < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.3/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "af062dfa35af0b5d3d221b3634e3ef9f96ad9923c51993ac4d15d76f71df16e5"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.4/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7d61b394cca4591edade8f8f2df97441a46c1c345452e92d1be5912b806c6ad4"
       define_method(:install) do
         bin.install "gau"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.3/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5aac5889d5814ca1c1dc7c426fbc696b1aab0a66ae4809c28e8c1a8400690368"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.1.4/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f5b3417be0c3cf42df349584d4a9daa8101912387e4b2ac5b8a1d3f441e2e67b"
       define_method(:install) do
         bin.install "gau"
       end
