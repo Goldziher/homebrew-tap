@@ -4,9 +4,9 @@
 class Spikard < Formula
   desc "Rust-centric multi-language HTTP framework with polyglot bindings"
   homepage "https://github.com/Goldziher/spikard"
-  version "0.15.6-rc.22"
+  version "0.15.6-rc.24"
   url "https://github.com/Goldziher/spikard/archive/v#{version}.tar.gz"
-  sha256 "116f11dca52557910332d7eb70c3b2fcf4c443d4fa9e3e725b71bda1b18ecbf9"
+  sha256 "1fdd146bbd92aaf4076d54e66d261dd95baa220b547298832314c9db95dfc2ff"
   license "MIT"
 
   depends_on "pkg-config" => :build
