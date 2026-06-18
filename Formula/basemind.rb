@@ -5,21 +5,21 @@
 class Basemind < Formula
   desc "Full AI context layer for coding agents — code-map, RAG, memory, web, git"
   homepage "https://github.com/Goldziher/basemind"
-  version "0.2.5"
+  version "0.2.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Goldziher/basemind/releases/download/v0.2.5/basemind-x86_64-apple-darwin.tar.gz"
-      sha256 "a3a31a89590d9ce1d3d6cae17b312973fe62c3a86e5cd68eb9ed3028382dbc6b"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.2.6/basemind-x86_64-apple-darwin.tar.gz"
+      sha256 "6d4c6b55f27db3f4bcc241503297a7a2cc5cbc11244509d19c2d3f49649f0d81"
 
       define_method(:install) do
         bin.install "basemind"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/basemind/releases/download/v0.2.5/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "665f2952088ef5454482a16a3983f7032a2f67941a5e26e147a5821de2d500a5"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.2.6/basemind-aarch64-apple-darwin.tar.gz"
+      sha256 "ea2c95cdf547adf0a8af50d04817c0abdde2a70c48c1f59bc136bc834e5c982e"
 
       define_method(:install) do
         bin.install "basemind"
@@ -29,15 +29,15 @@ class Basemind < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/basemind/releases/download/v0.2.5/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "878021bbde12cc675c409e3d8c6fc6adb2e4911cbe407fedd978c2cae906fe72"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.2.6/basemind-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "1e82a66985f09e6aae9936b5239334da4fedf2104966df1541468efa3f24d352"
       define_method(:install) do
         bin.install "basemind"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/basemind/releases/download/v0.2.5/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7edd77e235bfd03684caf92b56465ff4a97eca66a66e3e67956812df10d56706"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.2.6/basemind-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "299a624dffc18058be5b4a49ec51c8d1b8998234c741e08553dd2d74dd7fbf59"
       define_method(:install) do
         bin.install "basemind"
       end
