@@ -8,14 +8,15 @@ class Basemind < Formula
   version "0.11.0"
   license "MIT"
 
-  # Apple Silicon only — Intel macOS is not supported.
+  # Apple Silicon only — Intel macOS is not supported. Enforce this with a
+  # `depends_on arch:` requirement (evaluated at install time) rather than a
+  # load-time `odie`, which would abort `brew` for every formula in the tap on an
+  # Intel host the moment the tap is read.
   on_macos do
+    depends_on arch: :arm64
     on_arm do
       url "https://github.com/Goldziher/basemind/releases/download/v0.11.0/basemind-aarch64-apple-darwin.tar.gz"
       sha256 "6af53cb5d8fe6dda7de993ee6a56dced4967293f50e82042e273510f4610bf5c"
-    end
-    on_intel do
-      odie "basemind does not ship Intel macOS (x86_64) binaries; Apple Silicon (arm64) only"
     end
   end
 
