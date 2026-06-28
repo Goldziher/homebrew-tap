@@ -86,6 +86,14 @@ jobs:
           brew test "goldziher/tap/${FORMULA}"
           brew bottle --json --root-url="$ROOT_URL" "goldziher/tap/${FORMULA}"
 
+          version="${TAG#v}"
+          for bottle in ./*.bottle*.tar.gz; do
+            normalized="${bottle/${FORMULA}--${version}/${FORMULA}-${version}}"
+            if [[ "$normalized" != "$bottle" ]]; then
+              mv "$bottle" "$normalized"
+            fi
+          done
+
           mkdir -p bottle-json
           cp ./*.bottle.json "bottle-json/${FORMULA}-${RUNNER_OS}-${RUNNER_ARCH}.json"
           gh release upload "$TAG" ./*.bottle*.tar.gz --repo "$RELEASE_REPO" --clobber
