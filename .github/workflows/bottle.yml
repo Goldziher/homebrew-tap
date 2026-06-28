@@ -41,8 +41,6 @@ jobs:
         include:
           - name: macOS ARM64
             runner: macos-15
-          - name: macOS Intel
-            runner: macos-15-intel
           - name: Linux x86_64
             runner: ubuntu-24.04
           - name: Linux ARM64
@@ -83,6 +81,7 @@ jobs:
 
           brew --version
           brew tap goldziher/tap "$GITHUB_WORKSPACE"
+          brew trust goldziher/tap
           brew install --build-bottle --formula "goldziher/tap/${FORMULA}"
           brew test "goldziher/tap/${FORMULA}"
           brew bottle --json --root-url="$ROOT_URL" "goldziher/tap/${FORMULA}"
@@ -122,6 +121,7 @@ jobs:
         run: |
           set -euo pipefail
           brew tap goldziher/tap "$GITHUB_WORKSPACE"
+          brew trust goldziher/tap
           brew bottle --merge --write --no-commit bottle-json/*.json
 
           git diff -- "Formula/${FORMULA}.rb"
