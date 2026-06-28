@@ -123,6 +123,7 @@ jobs:
           brew tap goldziher/tap "$GITHUB_WORKSPACE"
           brew trust goldziher/tap
           brew bottle --merge --write --no-commit bottle-json/*.json
+          cp "$(brew --repository goldziher/tap)/Formula/${FORMULA}.rb" "Formula/${FORMULA}.rb"
 
           git diff -- "Formula/${FORMULA}.rb"
           if git diff --quiet -- "Formula/${FORMULA}.rb"; then

@@ -9,6 +9,14 @@ class Starmetal < Formula
   sha256 "1854284d97f98efc76b7122bfcc1b27a80473e18b70ca5b41a51bc6c10a7be76"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Goldziher/starmetal/releases/download/v0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d6f82c71e3d0f2f77ff0173794be0f911f7aeab62f6cd769cffa123eaecffd5"
+    sha256 cellar: :any,                 arm64_linux:   "7a6d6d8b0b54c23a2326dbee2a0c55b9f39cb845d60b4e7050cc7da6e6ed09d1"
+    sha256 cellar: :any,                 x86_64_linux:  "0f227ecdb1e7f232d19910648da5328e8210574568031afe06bd450b6144ab65"
+  end
+
   depends_on "rust" => :build
 
   def install
