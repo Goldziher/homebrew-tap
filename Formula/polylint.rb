@@ -5,28 +5,28 @@
 class Polylint < Formula
   desc "Universal zero-dependency linter & formatter"
   homepage "https://github.com/Goldziher/polylint"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.1.4/poly-0.1.4-aarch64-apple-darwin.tar.gz"
-      sha256 "55315d5343d7753dae087507f6ea8bd74b3c627326a9783f02aebe4ca1688356"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.1.5/poly-0.1.5-aarch64-apple-darwin.tar.gz"
+      sha256 "8bddf819e947394e0caeb46e600522cf1fa531a507145a8338781aaaa74b9681"
     end
     on_intel do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.1.4/poly-0.1.4-x86_64-apple-darwin.tar.gz"
-      sha256 "a2ba1bfdfa057cb8387faddbdaac44e2d04f046b56862107fb040f8059631eb2"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.1.5/poly-0.1.5-x86_64-apple-darwin.tar.gz"
+      sha256 "461a40765a35f99aaa63b47553f1fc031692b015b11bf71aa1c89a45892a46ca"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.1.4/poly-0.1.4-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "ebf9ce3bffc8be517be3e9c998981ec4bfb29cda0a1bb4fcf0fcd5ca08b5b956"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.1.5/poly-0.1.5-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b18d26b36a269bea6a4224ee9d4689973966363700ec4f9a57feaebb82ac11cc"
     end
     on_intel do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.1.4/poly-0.1.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "876a42ad7b5d150783f2e3977be6691345f8383beae08594ef540779383fcc28"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.1.5/poly-0.1.5-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "1881785605d009e51eaf4cb27e3da1981d07f3b75cefeb7fa299d1b03261cfb3"
     end
   end
 
