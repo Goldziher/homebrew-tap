@@ -9,6 +9,14 @@ class Polylint < Formula
   sha256 "39f2ad48a96e7fa51806b1ff114c56ba832d1514c2b587452288366e460b0e7b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Goldziher/polylint/releases/download/v0.1.14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c23d9d14673edfef15fa00c0673a1dbcc18dece22864123f9149aa2aee163b2"
+    sha256 cellar: :any,                 arm64_linux:   "4df76908fc9ffd069c5c35f3977ba6dd82c8070bb6f629a289b9378aa5c617b9"
+    sha256 cellar: :any,                 x86_64_linux:  "0532b6bd4f68238f810f6c1f838a3c548e69e0066db40ef306fc299a2313dec5"
+  end
+
   depends_on "rust" => :build
 
   def install
