@@ -5,17 +5,9 @@
 class Polylint < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/polylint"
-  url "https://github.com/Goldziher/polylint/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "a024448a3009c21bacf6ab4653bae6500a079e1a34b61c3d96177b70ba6a4e22"
+  url "https://github.com/Goldziher/polylint/archive/refs/tags/v0.1.11.tar.gz"
+  sha256 "0234f596f38cf711136eef040d0f54780d74e3ec334d29b29d5ccb73ae6b9bc1"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Goldziher/polylint/releases/download/v0.1.10"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da56345de42cbf2f4449a69e736a827588268a2f3c58f8d61912a17d53a9178a"
-    sha256 cellar: :any,                 arm64_linux:   "45f1f14a8c5eb1adaf1bcda88abaf4f202628b423020f783a0f9b7936f0dcec1"
-    sha256 cellar: :any,                 x86_64_linux:  "0808893f86acd3a2a1731f0131c947f1e0821a201b0e11c64b4927f3902e3841"
-  end
 
   depends_on "rust" => :build
 
