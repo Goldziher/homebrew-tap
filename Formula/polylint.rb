@@ -5,14 +5,33 @@
 class Polylint < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/polylint"
-  url "https://github.com/Goldziher/polylint/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "4bc9aaab0138889562c94d0fca0197c5995229c0c9791face5f6b06c34e24839"
+  version "0.6.0"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/Goldziher/polylint/releases/download/v0.6.0/poly-0.6.0-aarch64-apple-darwin.tar.gz"
+      sha256 "da71c27e41e17831cd374d84c5a587901c95ef35f00be1f9c277c7056d921b50"
+    end
+    on_intel do
+      url "https://github.com/Goldziher/polylint/releases/download/v0.6.0/poly-0.6.0-x86_64-apple-darwin.tar.gz"
+      sha256 "2186edf62dfa73f823a7ccdfcd84c79d7dd6ef9c9acc04c1120a4c008ff36400"
+    end
+  end
+
+  on_linux do
+    on_arm do
+      url "https://github.com/Goldziher/polylint/releases/download/v0.6.0/poly-0.6.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "e7b4e9a2ecb4be0184c8207b6f3ecea2f794a100d54564d0a755952a170d2540"
+    end
+    on_intel do
+      url "https://github.com/Goldziher/polylint/releases/download/v0.6.0/poly-0.6.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "87b6af58801f0bc034cf6f9852d8debd18f2d83f62d38950801049ec45254a92"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/poly-cli")
+    bin.install "poly"
   end
 
   test do
