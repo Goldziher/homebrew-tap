@@ -5,7 +5,7 @@
 class Basemind < Formula
   desc "Full AI context layer over MCP — code-map, document RAG, memory, web, git"
   homepage "https://github.com/Goldziher/basemind"
-  version "0.18.1"
+  version "0.19.0"
   license "MIT"
 
   # Apple Silicon only — Intel macOS is not supported. Enforce this with a
@@ -15,19 +15,19 @@ class Basemind < Formula
   on_macos do
     depends_on arch: :arm64
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.18.1/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "75eb305dad516e531824d5133aa65d08f77db477557567e0f8fe0f2e55896124"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.0/basemind-aarch64-apple-darwin.tar.gz"
+      sha256 "abe92c2c6a1ce33b9a4184059dc562447ad95bf009028a4167d44d1cafcddbe9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.18.1/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "02e3b60494600e145080bf44d184a8834bef5771f153e9d49015d86b4d35ae4b"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.0/basemind-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3aef64f02565ec0bbe792035887cc751eaaea487fc4d47456d0597c700e5bd1b"
     end
     on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.18.1/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "74026836be105f1e26b4b512f3431cd58721574453566c00a9018e9544ffed14"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.0/basemind-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ff78eec1c2831b4f08fe7dfa6b4552f9fb34a5f2ceb7a6d13339b81fe98d615c"
     end
   end
 
