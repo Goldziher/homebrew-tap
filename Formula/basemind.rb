@@ -5,36 +5,36 @@
 class Basemind < Formula
   desc "Full AI context layer over MCP — code-map, document RAG, memory, web, git"
   homepage "https://github.com/Goldziher/basemind"
-  version "0.19.1"
+  version "0.19.2"
   license "MIT"
 
-  # Apple Silicon only — Intel macOS is not supported. Enforce this with a
-  # depends_on arch requirement (evaluated at install time) rather than a
-  # load-time odie, which would abort brew for every formula in the tap on an
-  # Intel host the moment the tap is read.
   on_macos do
-    depends_on arch: :arm64
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.19.1/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "947b06b433cb1acadbef7926c246917c2a82670906bbef1d7ddf582a354d1577"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.2/basemind-aarch64-apple-darwin.tar.gz"
+      sha256 "4c71f761e432dabd715b9ff47491e2a14a484b6396c4e4a312e38af7dc8ebb54"
+    end
+    on_intel do
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.2/basemind-x86_64-apple-darwin.tar.gz"
+      sha256 "08b8750e28a09ed2ed58c45c5ddc5b62f59c6b879f8886a19cddf32d89aca1ee"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.19.1/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "3e0f24a6ea2172e56e43d6c8d6eabf03a0fca51bbc0ecde19f8158134945a2a1"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.2/basemind-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a839a22aa96d48935eb18e60336e1b72611c6fddeb7b1e7fd245415c232d2c4d"
     end
     on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.19.1/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3f2ba6d60d75bec3df56fce6d202251b00c7b4721e852a0662d3c4c4cc14bb08"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.19.2/basemind-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e22f167c078140dc27d8d35abdad6fdc2318016db7314e04882dafd6d09ad442"
     end
   end
 
   def install
-    # Archive root holds the binary + lib/ of bundled native libs; the binary's
-    # rpath resolves lib/ relative to its own location, so keep them together in
-    # libexec and expose the binary on PATH via a symlink.
+    # Archive root holds the binary + lib/ of bundled native libs (plus a co-located
+    # libonnxruntime.dylib on Intel macOS); the binary's rpath resolves lib/ relative
+    # to its own location and ort resolves the ONNX dylib relative to the executable,
+    # so keep them together in libexec and expose the binary on PATH via a symlink.
     libexec.install Dir["*"]
     bin.install_symlink libexec/"basemind"
   end
