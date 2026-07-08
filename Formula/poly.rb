@@ -5,28 +5,28 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  version "0.10.0"
+  version "0.11.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.10.0/poly-0.10.0-aarch64-apple-darwin.tar.gz"
-      sha256 "140da46e788250848506c53c23ba51f77b2ba3936dbb5803051b6c8d40cad9c6"
+      url "https://github.com/Goldziher/poly/releases/download/v0.11.0/poly-0.11.0-aarch64-apple-darwin.tar.gz"
+      sha256 "46134ba9fa3fdf011d3de93b30c85be7af1e607ab1709d8beaf6e331fe55b5e3"
     end
     on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.10.0/poly-0.10.0-x86_64-apple-darwin.tar.gz"
-      sha256 "79495990a16c6526529944c4ba10802ea08893d479f4aa5f777c5e452532e508"
+      url "https://github.com/Goldziher/poly/releases/download/v0.11.0/poly-0.11.0-x86_64-apple-darwin.tar.gz"
+      sha256 "26bc8dac5549999b5f08529f4b1e2a02df449bebb0f6cbf044145ea4b20af5b5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.10.0/poly-0.10.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "407165cf955b3211bcc4650e12be431f40ca5a346739707df59899f71b88d0e6"
+      url "https://github.com/Goldziher/poly/releases/download/v0.11.0/poly-0.11.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5e188999f81e7f0bfdafd2aa876f9698ef8934414b2ad22069eb68755f044b7d"
     end
     on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.10.0/poly-0.10.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d0de92f56d2c304dadd943344d61fd06e190ed40e5532d7ee0b125a3adf02f53"
+      url "https://github.com/Goldziher/poly/releases/download/v0.11.0/poly-0.11.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "97e20117dd907fd0e4ef065cfd7824ba0da96e444cee596cc3bbd05dcf53eeee"
     end
   end
 
