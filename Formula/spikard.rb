@@ -4,10 +4,10 @@
 class Spikard < Formula
   desc "Rust-centric multi-language HTTP framework with polyglot bindings"
   homepage "https://github.com/Goldziher/spikard"
-  version "0.17.0-rc.1"
+  version "0.17.0-rc.3"
   url "https://github.com/Goldziher/spikard.git",
-      tag:      "v0.17.0-rc.1",
-      revision: "0645c7a905cf2409958f79a9d9832d693382f6a1"
+      tag:      "v0.17.0-rc.3",
+      revision: "f96582d2495de0afb517ff20b8dda2a9609347d3"
   license "MIT"
 
   depends_on "pkg-config" => :build
