@@ -5,28 +5,28 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  version "0.16.0"
+  version "0.17.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.16.0/poly-0.16.0-aarch64-apple-darwin.tar.gz"
-      sha256 "3ef1f31696cfe884ef3ac4949e64fb4526ddb2be512f8f21ac9f7ab3c9c0c4b9"
+      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-aarch64-apple-darwin.tar.gz"
+      sha256 "3b6e072c60a77117bcdfd7552ad6bd2b852b9f4e76d5cf89e0d6bf8df6a66d56"
     end
     on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.16.0/poly-0.16.0-x86_64-apple-darwin.tar.gz"
-      sha256 "900e9e39f7e3705c212f9d5aeafd7fda288c46f8438f7da1756f7d11623a429c"
+      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-x86_64-apple-darwin.tar.gz"
+      sha256 "4918de53deacfc44e588e1336fd95f98fd5416f9ca04515ef3b97b816e20b042"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.16.0/poly-0.16.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d94848415731e83a78cb600a71a14de9e17bc09713c4c93e3c2c0fd04cec3a17"
+      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6c27b6d1e91ace396cecccf0cf6d3ae3be37c38d98c324fa0abd9ce6f16eb2ec"
     end
     on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.16.0/poly-0.16.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2a22343c9ba0a288f905144633b32d427386d8da2bcd676881dc436436724192"
+      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "b50c783578cfafedc69490699ef35c54cf1b8b9a0773e6872b8bc0d8f51515a9"
     end
   end
 
