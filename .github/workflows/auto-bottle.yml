@@ -1,0 +1,97 @@
+name: Auto Bottle
+
+run-name: Auto-bottle updated formulae
+
+# Centralized bottle triggering for the tap. Whenever a source-build formula is
+# updated on main (each package's release pipeline pushes its regenerated formula
+# here), dispatch the reusable Build Bottles workflow for it. This keeps bottle
+# builds in one place instead of every package repo dispatching individually.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/*.rb"
+
+concurrency:
+  group: auto-bottle-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  dispatch:
+    name: Dispatch bottle builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 2
+
+      - name: Dispatch bottle builds for updated source-build formulae
+        env:
+          # A PAT is used so the workflow_dispatch reliably starts a new run
+          # (the default GITHUB_TOKEN is subject to recursion limits).
+          GH_TOKEN: ${{ secrets.HOMEBREW_TOKEN || github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          # Formula files changed in this push. Fall back to all formulae when the
+          # parent commit is unavailable (e.g. first push).
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            changed=$(git diff --name-only HEAD^ HEAD -- 'Formula/*.rb' || true)
+          else
+            changed=$(ls Formula/*.rb 2>/dev/null || true)
+          fi
+
+          if [ -z "$changed" ]; then
+            echo "No formula changes to bottle."
+            exit 0
+          fi
+
+          for file in $changed; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .rb)"
+
+            # Only source-build formulae need bottles; prebuilt-binary formulae ship
+            # their own binaries.
+            if ! grep -qE 'system "cargo"|depends_on "rust"' "$file"; then
+              echo "$name: prebuilt-binary formula, no bottle needed"
+              continue
+            fi
+
+            # Skip if the formula already carries a bottle block. This is what breaks
+            # the loop: the Build Bottles merge job commits the bottle block back here,
+            # which would otherwise re-trigger this workflow.
+            if grep -qE '^[[:space:]]*bottle do' "$file"; then
+              echo "$name: bottle block already present, skipping"
+              continue
+            fi
+
+            url_line="$(grep -E '^[[:space:]]*url ' "$file" | head -1)"
+            repo="$(printf '%s' "$url_line" | grep -oE 'github\.com/[^/"]+/[^/"]+' | head -1 | sed -E 's#github\.com/##; s#\.git$##')"
+
+            if printf '%s' "$url_line" | grep -qE '/archive/'; then
+              tag="$(printf '%s' "$url_line" | sed -E 's#.*/archive/(refs/tags/)?##; s#\.tar\.gz".*##')"
+            else
+              # git-source formula (e.g. spikard): derive the tag from the version field.
+              ver="$(grep -E '^[[:space:]]*version ' "$file" | head -1 | sed -E 's#.*version "([^"]+)".*#\1#')"
+              tag="v${ver}"
+            fi
+
+            if [ -z "$repo" ] || [ -z "$tag" ] || [ "$tag" = "v" ]; then
+              echo "::warning::$name: could not determine repo/tag (repo='$repo' tag='$tag'), skipping"
+              continue
+            fi
+
+            echo "Dispatching Build Bottles: formula=$name tag=$tag release_repo=$repo"
+            gh workflow run bottle.yml \
+              --repo "$REPO" \
+              -f formula="$name" \
+              -f tag="$tag" \
+              -f release_repo="$repo"
+          done
