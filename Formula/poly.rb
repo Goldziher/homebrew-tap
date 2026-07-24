@@ -5,33 +5,19 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  version "0.17.0"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "d8e6e18431a2a4316901f3a08bdc0c8ae8a9f1bac47dde6ff69c1919b276a7e0"
   license "MIT"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-aarch64-apple-darwin.tar.gz"
-      sha256 "3b6e072c60a77117bcdfd7552ad6bd2b852b9f4e76d5cf89e0d6bf8df6a66d56"
-    end
-    on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-x86_64-apple-darwin.tar.gz"
-      sha256 "4918de53deacfc44e588e1336fd95f98fd5416f9ca04515ef3b97b816e20b042"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6c27b6d1e91ace396cecccf0cf6d3ae3be37c38d98c324fa0abd9ce6f16eb2ec"
-    end
-    on_intel do
-      url "https://github.com/Goldziher/poly/releases/download/v0.17.0/poly-0.17.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b50c783578cfafedc69490699ef35c54cf1b8b9a0773e6872b8bc0d8f51515a9"
-    end
-  end
+  depends_on "llvm" => :build
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
 
   def install
-    bin.install "poly"
+    # bindgen (via ruby-prism-sys) needs libclang; Homebrew Linux has no ambient
+    # clang, so point it at the llvm build dependency.
+    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
+    system "cargo", "install", *std_cargo_args(path: "crates/poly-cli")
   end
 
   test do
