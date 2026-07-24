@@ -7,7 +7,7 @@ class Spikard < Formula
   version "0.17.0-rc.3"
   url "https://github.com/Goldziher/spikard.git",
       tag:      "v0.17.0-rc.3",
-      revision: "f96582d2495de0afb517ff20b8dda2a9609347d3"
+      revision: "022b9932e2a9006983709f8bc9875fd54cab977c"
   license "MIT"
 
   depends_on "pkg-config" => :build
