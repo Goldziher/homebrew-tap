@@ -9,6 +9,14 @@ class Poly < Formula
   sha256 "51ab6be8df95ceacd84e4826547116f04524da49b8bf85b6ba99936de5ee3c16"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Goldziher/poly/releases/download/v0.18.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2887d9abbba8ea6f9bf39f2abdefddf3ce7755d6c29ed5dc439ef3109d89ed3"
+    sha256 cellar: :any,                 arm64_linux:   "a8a3064ff34aeebddc1a180b7dd1339551d9f7c3c58ab09445d6298b4a930ea2"
+    sha256 cellar: :any,                 x86_64_linux:  "5de472ab149ec23e0d1144f75d8f1cfa57357df8cc62d0d59d3c86da55069cfe"
+  end
+
   depends_on "llvm" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
