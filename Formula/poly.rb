@@ -5,17 +5,9 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.18.2.tar.gz"
-  sha256 "964c79370d7d95264d4713d45cd09518e45cecf7bd26de224461f98e3ec63c1f"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.18.3.tar.gz"
+  sha256 "d25f3f635e70b0aa1f7823b865b683fa68bd33bcf66f04f9261664beb646f29c"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Goldziher/poly/releases/download/v0.18.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd6587f23ce12cb1b53aade34091d58f9ba2319ed570856da5ff6239c733f9e5"
-    sha256 cellar: :any,                 arm64_linux:   "99d04963e8f1d8786f2026527d0f0855c092fb56ab5087748aef610c7264b9d8"
-    sha256 cellar: :any,                 x86_64_linux:  "877cd23d9920a66ccf2eadd711d5a1f5b72f182bcc3b7bdfc614e0347dbb5aea"
-  end
 
   depends_on "llvm" => :build
   depends_on "pkg-config" => :build
