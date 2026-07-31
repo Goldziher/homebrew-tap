@@ -12,10 +12,9 @@ class Spikard < Formula
 
   bottle do
     root_url "https://github.com/Goldziher/spikard/releases/download/v0.17.0-rc.10"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8348732de3ca378a92215e3abafba2eda008d771dc73267f17a95ae5fee2ce9"
-    sha256 cellar: :any,                 arm64_linux:   "7aaaffa92c5b1bdd7887f3510eae3f17502b9703a9f2959fdf93aa11c517941a"
-    sha256 cellar: :any,                 x86_64_linux:  "81834c6a39b6add106151ecdf5973bdc50a7d020c53143e8dc7651f585cc66b3"
+    sha256 cellar: :any, arm64_linux: "253f528b089f66e890130ca3b309e7feb7a25c45f19a6be0c95281831bb066c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "75be3f07640c16b6fb1db855b67d5e18666600c0faf260bf6448dd04b2de5ec1"
+    sha256 cellar: :any, x86_64_linux: "e842532d3f186c7c19ab96efd9c7fa781816e2a7a0c023709dda209bee595806"
   end
 
   depends_on "pkg-config" => :build
