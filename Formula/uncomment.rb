@@ -5,28 +5,28 @@
 class Uncomment < Formula
   desc "A fast, accurate comment removal tool using tree-sitter for AST parsing"
   homepage "https://github.com/Goldziher/uncomment"
-  version "3.5.1"
+  version "3.5.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.1/uncomment-aarch64-apple-darwin.tar.gz"
-      sha256 "221882e59d9029acf69db33ae88eeacdb5666e7ff86fa0329fd584d29225a9e8"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.2/uncomment-aarch64-apple-darwin.tar.gz"
+      sha256 "65a8aefd5ba950df41aa6f06643ae5b43662c00278851bb66d3e6db81408ca4e"
     end
     on_intel do
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.1/uncomment-x86_64-apple-darwin.tar.gz"
-      sha256 "9acee83f43be91a67ed38e440e99b5e2aa31ef0e06014a78fc0e406f02a93b88"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.2/uncomment-x86_64-apple-darwin.tar.gz"
+      sha256 "007be8a65bc4746f4097b6f7c18a3dab134a1042a124f5fb4808b9b768ea9777"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.1/uncomment-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "cbf4eb2d4993748836dfd0341b8b4a66c356e768fb3d09aa5e99fc816fdb8daa"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.2/uncomment-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a6ffb72b4acbae5d6565e9e6755fa03a8c86bd72342d171a3d10088e6fd340f2"
     end
     on_intel do
-      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.1/uncomment-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "5f8f57ef9eefd56b85150f593e1e59f5cfa798f19f07c29754cdab9b771c5504"
+      url "https://github.com/Goldziher/uncomment/releases/download/v3.5.2/uncomment-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "850eed7595ab6a84fa56523d389d15ef9ddf095301d67132fa43567705658b62"
     end
   end
 
