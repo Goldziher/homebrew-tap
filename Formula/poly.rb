@@ -5,17 +5,9 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.21.4.tar.gz"
-  sha256 "ef510090c0008c9b986bbd994c94d5fcf2d4068fbf818ecae39382cc083554dd"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.21.5.tar.gz"
+  sha256 "4a698653e4d1e65c3210ff7823f28fe8dac25ef3c6c6d82ccd861a569f33d6ab"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Goldziher/poly/releases/download/v0.21.4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f50f5ce73b4cbad5d727c8df04e84c09c6a8e6edbb782132299b3805d08e32f7"
-    sha256 cellar: :any,                 arm64_linux:   "cc76465a07a829d09cf65ecef2dc9d34a05fe77684be447a14501392c753d7e5"
-    sha256 cellar: :any,                 x86_64_linux:  "e07176232e2efbf0161bc54a52165609df6c2cb7a6877851f95035c3434272b9"
-  end
 
   depends_on "llvm" => :build
   depends_on "pkg-config" => :build
@@ -25,10 +17,21 @@ class Poly < Formula
     # bindgen (via ruby-prism-sys) needs libclang; Homebrew Linux has no ambient
     # clang, so point it at the llvm build dependency.
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
+    # Homebrew compiles the GitHub source tarball, which carries no .git, so
+    # build.rs can derive no id from v0.21.4-45-g646d58a and the binary reports an
+    # "unknown" channel. That is not cosmetic: the unknown channel falls back to
+    # a per-binary cache identity, so a Homebrew poly shares its result cache
+    # with nothing and redoes every file after each upgrade. Supplying the id is
+    # what build.rs documents this variable for.
+    ENV["POLY_BUILD_ID"] = "v#{version}"
     system "cargo", "install", *std_cargo_args(path: "crates/poly-cli")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/poly --version")
+    # Assert the whole version line, not just the number: the bare 
+    # substring matched even when the build id was missing, which is why the
+    # unknown-channel build shipped unnoticed.
+    assert_match "poly #{version} (release build v#{version}, release)",
+                 shell_output("#{bin}/poly --version")
   end
 end
