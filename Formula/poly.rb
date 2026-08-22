@@ -5,17 +5,9 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.21.6.tar.gz"
-  sha256 "9708fa5ad6c6286c915d476956b4546333078301e039e84a2fd589c8584af172"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.21.7.tar.gz"
+  sha256 "93ba5444ed591786a4e2e3f6db892b8f4cd5820693f34de3877c1ece94476161"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Goldziher/poly/releases/download/v0.21.6"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "730d9eb679f94d4ace7cb0a2524c71bac9d0c97e9a72f21ef600cdb8242e6fc1"
-    sha256 cellar: :any,                 arm64_linux:   "90f1b1dbe94150f26550911d99da80ec99217b40209add4e0066313d47f69eec"
-    sha256 cellar: :any,                 x86_64_linux:  "5558be0aeae1f2fa8105607b71e4ee37a2e4afdf1ccf989ef51179449cf82f03"
-  end
 
   depends_on "llvm" => :build
   depends_on "pkg-config" => :build
@@ -26,7 +18,7 @@ class Poly < Formula
     # clang, so point it at the llvm build dependency.
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
     # Homebrew compiles the GitHub source tarball, which carries no .git, so
-    # build.rs can derive no id from v0.21.5-4-g49d0387 and the binary reports an
+    # build.rs can derive no id from v0.21.6-4-gb4311a7 and the binary reports an
     # "unknown" channel. That is not cosmetic: the unknown channel falls back to
     # a per-binary cache identity, so a Homebrew poly shares its result cache
     # with nothing and redoes every file after each upgrade. Supplying the id is
