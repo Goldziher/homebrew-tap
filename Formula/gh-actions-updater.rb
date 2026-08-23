@@ -5,28 +5,28 @@
 class GhActionsUpdater < Formula
   desc "Fast GitHub Actions reference scanner and updater"
   homepage "https://github.com/Goldziher/gh-actions-updater"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.2/gh-actions-updater-aarch64-apple-darwin.tar.gz"
-      sha256 "ad2d351409dc88a56d887918eb5c7c32605478fc2c47b582b0ad2d50069724fc"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.3/gh-actions-updater-aarch64-apple-darwin.tar.gz"
+      sha256 "e9ffd17e1aacad466978bca46abeddab3e16d2ef73843f555944c8d0bb58d671"
     end
     on_intel do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.2/gh-actions-updater-x86_64-apple-darwin.tar.gz"
-      sha256 "e19a049795625dc9defeb65c2702bb6226b94d8f657d7e3a672289a13b17361a"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.3/gh-actions-updater-x86_64-apple-darwin.tar.gz"
+      sha256 "05123b128d265f0cbfdbbcf7eafb2db1b25b8a36434486b0bf7d111ace7af893"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.2/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7bcc11da461fbee1683ac7e8056940521ccb941015366036419144740008d0ed"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.3/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "36e73b6cf1265f3e763e74094a31cfbd69c5f50e1cf00b347ab81c3a697962c4"
     end
     on_intel do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.2/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d06aaaaa98241b55567f865f8bff92b9406e6c09dfd9a519f40155cb5dd9e85c"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.2.3/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "c83f492fddfda22c58be66fd9239520edd36b3270c4a9e9f59b3d22586bd4cae"
     end
   end
 
