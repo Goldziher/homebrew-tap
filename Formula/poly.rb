@@ -5,8 +5,8 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "efa46c627f011376a4d31be0b5c9bbbd16248259b74ff05d37d2f52095600096"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.23.1.tar.gz"
+  sha256 "0763f74de43aa7e2fcd27f305db32a32532ab4be89d7a3081649ba359504f148"
   license "MIT"
 
   depends_on "llvm" => :build
@@ -18,7 +18,7 @@ class Poly < Formula
     # clang, so point it at the llvm build dependency.
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
     # Homebrew compiles the GitHub source tarball, which carries no .git, so
-    # build.rs can derive no id from v0.23.0 and the binary reports an
+    # build.rs can derive no id from v0.23.1 and the binary reports an
     # "unknown" channel. That is not cosmetic: the unknown channel falls back to
     # a per-binary cache identity, so a Homebrew poly shares its result cache
     # with nothing and redoes every file after each upgrade. Supplying the id is
