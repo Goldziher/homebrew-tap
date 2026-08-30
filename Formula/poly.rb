@@ -5,17 +5,9 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "03e48fe21b6daf725bab686eaab254d66f65ce803ed4c9f111e17d456ece8c33"
+  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "efa46c627f011376a4d31be0b5c9bbbd16248259b74ff05d37d2f52095600096"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Goldziher/poly/releases/download/v0.22.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08e8f44a05fd96144508d830c4fbed2ecc90c410365f7773be7e76fb4a22825b"
-    sha256 cellar: :any,                 arm64_linux:   "b101a0b2985936796e12b91f619406aa9057a0ab786c9c6add6967b7437dee08"
-    sha256 cellar: :any,                 x86_64_linux:  "67b5b169ee85db819315baaa33886e622a967454945ed5dccaa97bc96ccbc961"
-  end
 
   depends_on "llvm" => :build
   depends_on "pkg-config" => :build
@@ -26,13 +18,20 @@ class Poly < Formula
     # clang, so point it at the llvm build dependency.
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
     # Homebrew compiles the GitHub source tarball, which carries no .git, so
-    # build.rs can derive no id from v0.22.0 and the binary reports an
+    # build.rs can derive no id from v0.23.0 and the binary reports an
     # "unknown" channel. That is not cosmetic: the unknown channel falls back to
     # a per-binary cache identity, so a Homebrew poly shares its result cache
     # with nothing and redoes every file after each upgrade. Supplying the id is
     # what build.rs documents this variable for.
     ENV["POLY_BUILD_ID"] = "v#{version}"
     system "cargo", "install", *std_cargo_args(path: "crates/poly-cli")
+    #  is an alias for the same executable, not a second binary. The
+    # tool is published as  on PyPI and  on npm
+    # (the unscoped  name is taken on both registries), so someone who
+    # installed it under that name will reasonably type . A symlink is
+    # relocatable and is captured in the bottle like any other file the formula
+    # installs, so it does not disturb the tap's auto-bottler.
+    bin.install_symlink bin/"poly" => "polylint"
   end
 
   test do
@@ -41,5 +40,9 @@ class Poly < Formula
     # unknown-channel build shipped unnoticed.
     assert_match "poly #{version} (release build v#{version}, release)",
                  shell_output("#{bin}/poly --version")
+    # The alias is part of the shipped surface, so prove it resolves to the same
+    # binary rather than trusting install_symlink to have run.
+    assert_match "poly #{version} (release build v#{version}, release)",
+                 shell_output("#{bin}/polylint --version")
   end
 end
