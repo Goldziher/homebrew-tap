@@ -5,47 +5,46 @@
 class Poly < Formula
   desc "Universal zero-dependency linter and formatter"
   homepage "https://github.com/Goldziher/poly"
-  url "https://github.com/Goldziher/poly/archive/refs/tags/v0.23.1.tar.gz"
-  sha256 "0763f74de43aa7e2fcd27f305db32a32532ab4be89d7a3081649ba359504f148"
+  version "0.24.0"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/Goldziher/poly/releases/download/v0.23.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee5ffd524e63c8f9825da807f10f58d6daa8fb0fcc4df0fb69ef807a4c34fd2e"
-    sha256 cellar: :any,                 arm64_linux:   "b7ca3ac6d14f51ddc695667c5740125b0e021a3d7ac421783a29382d7d2efaa0"
-    sha256 cellar: :any,                 x86_64_linux:  "dc570146685050f527deac6aeaf5549cd2fedaf8dbbe38a30b4da5a09a96cfef"
+  on_macos do
+    on_arm do
+      url "https://github.com/Goldziher/poly/releases/download/v0.24.0/poly-0.24.0-aarch64-apple-darwin.tar.gz"
+      sha256 "527691af531e9870e8ce1171dde79bd959fb5d0a26f8e3351faa9ef461be8cf9"
+    end
+    on_intel do
+      url "https://github.com/Goldziher/poly/releases/download/v0.24.0/poly-0.24.0-x86_64-apple-darwin.tar.gz"
+      sha256 "b735c7c99be502eea3de024557843e52fb58f041971a271f30a9f7b22d66fc24"
+    end
   end
 
-  depends_on "llvm" => :build
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  on_linux do
+    on_arm do
+      url "https://github.com/Goldziher/poly/releases/download/v0.24.0/poly-0.24.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5107ad17dba33eaba1f2f04c893d37e865be7061aa8366c02b5dad9356aa92c6"
+    end
+    on_intel do
+      url "https://github.com/Goldziher/poly/releases/download/v0.24.0/poly-0.24.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e4d7cb70b9c5dc2e42ea8ef48916043e35bcb99339d3ec5fb0a60ef452c17d47"
+    end
+  end
 
   def install
-    # bindgen (via ruby-prism-sys) needs libclang; Homebrew Linux has no ambient
-    # clang, so point it at the llvm build dependency.
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
-    # Homebrew compiles the GitHub source tarball, which carries no .git, so
-    # build.rs can derive no id from v0.23.1 and the binary reports an
-    # "unknown" channel. That is not cosmetic: the unknown channel falls back to
-    # a per-binary cache identity, so a Homebrew poly shares its result cache
-    # with nothing and redoes every file after each upgrade. Supplying the id is
-    # what build.rs documents this variable for.
-    ENV["POLY_BUILD_ID"] = "v#{version}"
-    system "cargo", "install", *std_cargo_args(path: "crates/poly-cli")
-    #  is an alias for the same executable, not a second binary. The
-    # tool is published as  on PyPI and  on npm
-    # (the unscoped  name is taken on both registries), so someone who
-    # installed it under that name will reasonably type . A symlink is
-    # relocatable and is captured in the bottle like any other file the formula
-    # installs, so it does not disturb the tap's auto-bottler.
+    bin.install "poly"
+    # polylint is an alias for the same executable, not a second binary. The
+    # tool is published as polylint on PyPI and @goldziher/polylint on npm (the
+    # unscoped poly name is taken on both registries), so someone who installed
+    # it under that name will reasonably type polylint.
     bin.install_symlink bin/"poly" => "polylint"
   end
 
   test do
-    # Assert the whole version line, not just the number: the bare 
-    # substring matched even when the build id was missing, which is why the
-    # unknown-channel build shipped unnoticed.
+    # Assert the whole version line, not just the number: the bare version
+    # substring matched even when the build id was missing, which is how an
+    # unknown-channel build once shipped unnoticed. The release archives are
+    # stamped with POLY_BUILD_ID by publish.yaml, so this holds for a prebuilt
+    # binary exactly as it did for a source build.
     assert_match "poly #{version} (release build v#{version}, release)",
                  shell_output("#{bin}/poly --version")
     # The alias is part of the shipped surface, so prove it resolves to the same
