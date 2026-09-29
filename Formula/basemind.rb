@@ -5,28 +5,28 @@
 class Basemind < Formula
   desc "Full AI context layer over MCP — code-map, document RAG, memory, web, git"
   homepage "https://github.com/Goldziher/basemind"
-  version "0.27.3"
+  version "0.27.4"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.27.3/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "d5a6c6a2fe88ea48be8d3223c2bf2cad20ea4551f772da04b00da7bf03dfe297"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.27.4/basemind-aarch64-apple-darwin.tar.gz"
+      sha256 "507e51fd3dcb175410f202b44e144fc7b0ad8b05f16c722493fd535e9f9adfc7"
     end
     on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.27.3/basemind-x86_64-apple-darwin.tar.gz"
-      sha256 "3cd3627e8352013a28a6e510e6339d7845cb2b3f4000d85e48e17f48ff955817"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.27.4/basemind-x86_64-apple-darwin.tar.gz"
+      sha256 "04bb6e2da7261ea2250c83d01c5021c145d4aac9e4865cbf5a8d85ca08768835"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.27.3/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d48b7be36f1a5d29f9c7683bf0bd3c972222fcbedd9f76dd9e471c3093ded0b2"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.27.4/basemind-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "726151c2bc3795e185c5ce8f70a5aab5799885c01cdc2308576423476b434fcb"
     end
     on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.27.3/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "5bcc7153021e5ba18b69485b86cb15611d66cd80de89f5024ca71264b1e2b1d6"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.27.4/basemind-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "16f624c5b4f5cbf2c742b6bd8e8b711a1f27e71ce993df4ec39c5404aa267967"
     end
   end
 
