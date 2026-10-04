@@ -5,21 +5,21 @@
 class Scythe < Formula
   desc "Polyglot SQL-to-code generator with built-in linting and formatting"
   homepage "https://github.com/Goldziher/scythe"
-  version "0.18.1"
+  version "0.19.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Goldziher/scythe/releases/download/v0.18.1/scythe-x86_64-apple-darwin.tar.gz"
-      sha256 "4718f32e1254c776c02edea3972024cb5fd6604330ef8b21f1533256eaa1a128"
+      url "https://github.com/Goldziher/scythe/releases/download/v0.19.0/scythe-x86_64-apple-darwin.tar.gz"
+      sha256 "a2a79e8fc6d99ef61dcaa995720ee68e2844b25681a326ef069772b0dd2b0372"
 
       define_method(:install) do
         bin.install "scythe"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Goldziher/scythe/releases/download/v0.18.1/scythe-aarch64-apple-darwin.tar.gz"
-      sha256 "93123aec3b2eaa54fed872e7d538b02288a3717bc51cba29a000ab4be5198d9f"
+      url "https://github.com/Goldziher/scythe/releases/download/v0.19.0/scythe-aarch64-apple-darwin.tar.gz"
+      sha256 "732feba9ebc389d9d64cded64f8c42b501a73f36e10a566800e5fe11446f4f5a"
 
       define_method(:install) do
         bin.install "scythe"
@@ -29,15 +29,15 @@ class Scythe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/scythe/releases/download/v0.18.1/scythe-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fd0a1e21e4857671058f9a2a339898ac1e75ded1d1f657a0bbbf7d6c6aa0bfb2"
+      url "https://github.com/Goldziher/scythe/releases/download/v0.19.0/scythe-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "456fa94bc5a4334e9aa14c9c7f6ba8cab2ce3d5d2b7a5048177b29571112b45c"
       define_method(:install) do
         bin.install "scythe"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Goldziher/scythe/releases/download/v0.18.1/scythe-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a9e31d38884020e7bdfd45d725332271ddcee7df0aac930b80c1c62a1c332331"
+      url "https://github.com/Goldziher/scythe/releases/download/v0.19.0/scythe-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "8e5162e35132388215f7299eaf0e3079e4bd96458ab206190120f73d4c094bbd"
       define_method(:install) do
         bin.install "scythe"
       end
