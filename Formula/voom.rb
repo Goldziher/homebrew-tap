@@ -11,22 +11,22 @@ class Voom < Formula
   on_macos do
     on_arm do
       url "https://github.com/Goldziher/voom/releases/download/v0.7.0/voom-aarch64-apple-darwin.tar.gz"
-      sha256 "8ff996492aae84959df11c52af81e03dc0ca3c55e1847838e572865161cfcba7"
+      sha256 "16fc611917a6ca0c2742e9e8e5f588b1b917487ac752b7715bf2193266802ccc"
     end
     on_intel do
       url "https://github.com/Goldziher/voom/releases/download/v0.7.0/voom-x86_64-apple-darwin.tar.gz"
-      sha256 "6c104ea79acaa0798f9f0f14de00b4d135980cac24d81748ca05576c4188fc03"
+      sha256 "ccfb40727362dbbc8976e8ec0f031e9c2c703ab35d94cb48be1b55d879d41eaa"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/Goldziher/voom/releases/download/v0.7.0/voom-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "030c282e5bfd968177c12732884288fe37ffcbff54c89e66622cd02b54e60fb2"
+      sha256 "46ec472e5814147fde187e9f92e7f67f2f622270e72fefbb3ce19f3ca4319763"
     end
     on_intel do
       url "https://github.com/Goldziher/voom/releases/download/v0.7.0/voom-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "259c18fc1abb7b786d1b34259cf3366d0011eaac46082297a34d439ca1bccae3"
+      sha256 "470ba33493196dd121f6741468f6b4eee29bbfb7cef2423f20bcb54445d2f72d"
     end
   end
 
