@@ -1,8 +1,8 @@
 class Gitfluff < Formula
   desc "Commit message linter with presets and cleanup automation"
   homepage "https://github.com/Goldziher/gitfluff"
-  url "https://github.com/Goldziher/gitfluff/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e149626be3a4cf7b8d4715519810dfc74fdf48281b39ec2b7d8f6c776f1857a6"
+  url "https://github.com/Goldziher/gitfluff/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "3da7c4f388c0d0c09f5461eb1b704d1f34677caaae52de2853d4f4e273a1ceb8"
   license "MIT"
 
   bottle do
