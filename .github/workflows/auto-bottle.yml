@@ -12,6 +12,13 @@ on:
     branches: [main]
     paths:
       - "Formula/*.rb"
+      - ".github/workflows/auto-bottle.yml"
+      - ".github/tests/test_auto_bottle.py"
+  pull_request:
+    paths:
+      - "Formula/*.rb"
+      - ".github/workflows/auto-bottle.yml"
+      - ".github/tests/test_auto_bottle.py"
 
 concurrency:
   group: auto-bottle-${{ github.sha }}
@@ -31,7 +38,11 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Test bottle dispatch rules
+        run: python3 -B -m unittest discover -s .github/tests -v
+
       - name: Dispatch bottle builds for updated source-build formulae
+        if: github.event_name == 'push'
         env:
           # A PAT is used so the workflow_dispatch reliably starts a new run
           # (the default GITHUB_TOKEN is subject to recursion limits).
@@ -64,14 +75,6 @@ jobs:
               continue
             fi
 
-            # Skip if the formula already carries a bottle block. This is what breaks
-            # the loop: the Build Bottles merge job commits the bottle block back here,
-            # which would otherwise re-trigger this workflow.
-            if grep -qE '^[[:space:]]*bottle do' "$file"; then
-              echo "$name: bottle block already present, skipping"
-              continue
-            fi
-
             url_line="$(grep -E '^[[:space:]]*url ' "$file" | head -1)"
             repo="$(printf '%s' "$url_line" | grep -oE 'github\.com/[^/"]+/[^/"]+' | head -1 | sed -E 's#github\.com/##; s#\.git$##')"
 
@@ -85,6 +88,16 @@ jobs:
 
             if [ -z "$repo" ] || [ -z "$tag" ] || [ "$tag" = "v" ]; then
               echo "::warning::$name: could not determine repo/tag (repo='$repo' tag='$tag'), skipping"
+              continue
+            fi
+
+            # Only current-release bottles break the update loop. A source release can
+            # retain an older bottle block until new bottles have been built and merged.
+            bottle_root_url="$(sed -n '/^[[:space:]]*bottle do/,/^[[:space:]]*end/p' "$file" |
+              sed -nE 's/^[[:space:]]*root_url "([^"]+)".*/\1/p' | head -1)"
+            expected_root_url="https://github.com/${repo}/releases/download/${tag}"
+            if [ "$bottle_root_url" = "$expected_root_url" ]; then
+              echo "$name: bottle block matches current release, skipping"
               continue
             fi
 
