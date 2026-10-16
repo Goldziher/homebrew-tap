@@ -5,28 +5,28 @@
 class AiRulez < Formula
   desc "Standards-compliant lifecycle tool for agent knowledge and capabilities: author, generate, bundle, validate, govern, publish"
   homepage "https://goldziher.github.io/ai-rulez/"
-  version "5.3.0"
+  version "5.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.3.0/ai-rulez_5.3.0_darwin_arm64.tar.gz"
-      sha256 "a3597cde221e226e7718d51cc9aa85a0456c267d23163f86c4bf0d842bdc4718"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.4.0/ai-rulez_5.4.0_darwin_arm64.tar.gz"
+      sha256 "125adb43e97483c95cb57ea6061c638647fc30479639a1b467eb503849de5ffd"
     end
     on_intel do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.3.0/ai-rulez_5.3.0_darwin_amd64.tar.gz"
-      sha256 "2ded4d78f4aee64d5e1fe4f9af48f3b88193f178befeaeadc6cc733392a92bd5"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.4.0/ai-rulez_5.4.0_darwin_amd64.tar.gz"
+      sha256 "aede3d2c18239242236633f994d42f4c31f0dab0c84a1aa559f6a23030665525"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.3.0/ai-rulez_5.3.0_linux_arm64.tar.gz"
-      sha256 "92feea98c8c7e860f06222f5d20a8f5c2b10eb646d15cc88ec3f13b560c7a565"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.4.0/ai-rulez_5.4.0_linux_arm64.tar.gz"
+      sha256 "609c34ad3417beca931430c96c49d63bf3d58da4f9360a840c1f50d5c188250c"
     end
     on_intel do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.3.0/ai-rulez_5.3.0_linux_amd64.tar.gz"
-      sha256 "345e54ca4b197130987f84b54407329927ebf4b5c1afcd0f3048a76a966db50b"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.4.0/ai-rulez_5.4.0_linux_amd64.tar.gz"
+      sha256 "6415847ca2cac0e7218b03682c550b4695139436dedde99328991dd7afb1b038"
     end
   end
 
