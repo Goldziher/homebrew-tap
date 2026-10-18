@@ -5,28 +5,28 @@
 class Voom < Formula
   desc "Fast, safe, parallel build-artifact pruning across every major language ecosystem"
   homepage "https://github.com/Goldziher/voom"
-  version "0.11.3"
+  version "0.12.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/voom/releases/download/v0.11.3/voom-aarch64-apple-darwin.tar.gz"
-      sha256 "b5706fd56d1639cea411d1f900f64c65dc0f36a04cbbdf38eaba58f3ec3599f2"
+      url "https://github.com/Goldziher/voom/releases/download/v0.12.0/voom-aarch64-apple-darwin.tar.gz"
+      sha256 "3ecae116658a488368f754c0fa616984993a898703be7f8147d2dc2a533859c2"
     end
     on_intel do
-      url "https://github.com/Goldziher/voom/releases/download/v0.11.3/voom-x86_64-apple-darwin.tar.gz"
-      sha256 "bc600e866507218f9cc41610414346399e6ebf5db3e3452931bff302dc0780b9"
+      url "https://github.com/Goldziher/voom/releases/download/v0.12.0/voom-x86_64-apple-darwin.tar.gz"
+      sha256 "868eeeba0dceb5566ef47bf54eb37d0e486b5f34fc8981fb8f9e5cda7efabcc9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/voom/releases/download/v0.11.3/voom-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5609209a873e6f3d84a2cde950af9c0e49b50cb477315dd5c62c6d0c0499815b"
+      url "https://github.com/Goldziher/voom/releases/download/v0.12.0/voom-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "64a9ca3014cd5dbea338082fba1dc48a3be191a8199c166bfcb4ca7e04504118"
     end
     on_intel do
-      url "https://github.com/Goldziher/voom/releases/download/v0.11.3/voom-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4d48c2e896788b891d5183ca10619b556bb86d0d96cdea4f1de7e4487d9f05bb"
+      url "https://github.com/Goldziher/voom/releases/download/v0.12.0/voom-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5c6c5cf54c9256de1322919353e5e94ae5132f80c5c123dac345e77394283c00"
     end
   end
 
