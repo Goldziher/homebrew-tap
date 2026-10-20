@@ -5,33 +5,34 @@
 class AiRulez < Formula
   desc "Standards-compliant lifecycle tool for agent knowledge and capabilities: author, generate, bundle, validate, govern, publish"
   homepage "https://goldziher.github.io/ai-rulez/"
-  version "5.5.3"
-  license "MIT"
+  version "5.6.0"
+  license all_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.5.3/ai-rulez_5.5.3_darwin_arm64.tar.gz"
-      sha256 "32c8c07724dbf1791f95b962774338372b7a35aba05be1c91b8ed4331d293cc9"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.6.0/ai-rulez_5.6.0_darwin_arm64.tar.gz"
+      sha256 "36c2793dda9ff7730c5558e811ed320f39dcad1ecb498460a8ba301ca3ae0658"
     end
     on_intel do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.5.3/ai-rulez_5.5.3_darwin_amd64.tar.gz"
-      sha256 "e116d1842e455626f3b946bbd57d3da235c95d6d3f5410328b557687f57bd1f2"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.6.0/ai-rulez_5.6.0_darwin_amd64.tar.gz"
+      sha256 "c9a68f3987fbda2f9a454ef962cd2f3bc4c7ab2a9270a463ff24f38b3a9c0a81"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.5.3/ai-rulez_5.5.3_linux_arm64.tar.gz"
-      sha256 "6d3b7a72b4cf259c920eced1440ecaf46b5100cae6febdc7fdbd157721074898"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.6.0/ai-rulez_5.6.0_linux_arm64.tar.gz"
+      sha256 "732e038c8c40dad84615aadb99d7d1507a7d2f7df30ea8960dfffb88a7ab143e"
     end
     on_intel do
-      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.5.3/ai-rulez_5.5.3_linux_amd64.tar.gz"
-      sha256 "1d77a2aa49fb15ca2a8148832b128baccd93a8c36ea8edecc378df6fe5c90fe3"
+      url "https://github.com/Goldziher/ai-rulez/releases/download/v5.6.0/ai-rulez_5.6.0_linux_amd64.tar.gz"
+      sha256 "899225d9223ed96d2291a260cc6db8ed84d4642af4f06adb814495d94eaa5866"
     end
   end
 
   def install
     bin.install "ai-rulez"
+    doc.install "LICENSE", "THIRD_PARTY_NOTICES.md", "LICENSES"
   end
 
   test do
