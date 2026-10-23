@@ -11,22 +11,22 @@ class Basemind < Formula
   on_macos do
     on_arm do
       url "https://github.com/Goldziher/basemind/releases/download/v0.31.0/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "1b903d41fee6f2df175ab9301b86b374932b054f25eb755b1a2e69798070a8f8"
+      sha256 "dc71bf77e616747314fc47298adfaf405fb96a3bce41c96d685cb13408efae97"
     end
     on_intel do
       url "https://github.com/Goldziher/basemind/releases/download/v0.31.0/basemind-x86_64-apple-darwin.tar.gz"
-      sha256 "0503b768cb1e47d9c991019309331371201399f41f135d03e52d3bc75c7d4410"
+      sha256 "475008f4c09d06eba165491a528d2f4c27f8ec2e269d11f35ce7dbd113eb31fc"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/Goldziher/basemind/releases/download/v0.31.0/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b125795ca2106bdcf859e6f1be7e7dc0e82b489835e5f18ab6b5cd57a0853126"
+      sha256 "b03ecb1c9dbb1bf18e2e306ea37033c25b54b081af54ad776d9a21a2d8af6573"
     end
     on_intel do
       url "https://github.com/Goldziher/basemind/releases/download/v0.31.0/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2408c0d489c2e5ad84a2503dcde4c97b234f0b6ac1a12cc1a64944eb8fd3c774"
+      sha256 "a0ce8fefc37e1406cfd389e5cbd13c9199d2d7731f6042b55be186296d37740f"
     end
   end
 
