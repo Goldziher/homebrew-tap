@@ -5,28 +5,28 @@
 class Adrlint < Formula
   desc "Lint and format MADR architecture decision records"
   homepage "https://github.com/Goldziher/adrlint"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/adrlint/releases/download/v0.1.0/adrlint-aarch64-apple-darwin.tar.gz"
-      sha256 "427544691b19758e422ea90b1cb8ff619539cf98a714544dc1238fd424977a21"
+      url "https://github.com/Goldziher/adrlint/releases/download/v0.2.0/adrlint-aarch64-apple-darwin.tar.gz"
+      sha256 "0eef5e35dd061c25031a65b117cef5622bf81a768ff916f36fd284fa01123aea"
     end
     on_intel do
-      url "https://github.com/Goldziher/adrlint/releases/download/v0.1.0/adrlint-x86_64-apple-darwin.tar.gz"
-      sha256 "42c33843b9e258cee59ae27137a7bcb0a38ba3ceff199157da49960161b9eccd"
+      url "https://github.com/Goldziher/adrlint/releases/download/v0.2.0/adrlint-x86_64-apple-darwin.tar.gz"
+      sha256 "37bd057d568c4404d6012d401faa362a35a29aac8516314cb16737168ee82f81"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/adrlint/releases/download/v0.1.0/adrlint-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "afae299a4b88ba57fb834d7bb8564b6badf2605bb541584a382fef2f117874b9"
+      url "https://github.com/Goldziher/adrlint/releases/download/v0.2.0/adrlint-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "549b0cdfdc21967d376127f217dbb609eb3703dcc98f4941b670831090a780db"
     end
     on_intel do
-      url "https://github.com/Goldziher/adrlint/releases/download/v0.1.0/adrlint-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "146cccc213bfe0d070e29302118a2eb90444c17cf2bbe2a41018f35030201fd7"
+      url "https://github.com/Goldziher/adrlint/releases/download/v0.2.0/adrlint-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3c2ebf0dc3531f7f1f0895ae7059e5060c9c87a7e55b5bfaf6f6e13931897e15"
     end
   end
 
