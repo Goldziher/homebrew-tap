@@ -5,28 +5,28 @@
 class GhActionsUpdater < Formula
   desc "Fast GitHub Actions reference scanner and updater"
   homepage "https://github.com/Goldziher/gh-actions-updater"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.3.1/gh-actions-updater-aarch64-apple-darwin.tar.gz"
-      sha256 "677f614cdc9addcb306176a386bb3164ccee0b5e3d0ccc8a2c94c5db2606b3c1"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.4.0/gh-actions-updater-aarch64-apple-darwin.tar.gz"
+      sha256 "a666564a7506cd63a047ba782bf9efb07d777b4a93f1992322632cb8ecc11c0d"
     end
     on_intel do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.3.1/gh-actions-updater-x86_64-apple-darwin.tar.gz"
-      sha256 "c1fb86226f2dfdb614bb380b8af9918eada608961144c89d5aa353f1ae6fbcdd"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.4.0/gh-actions-updater-x86_64-apple-darwin.tar.gz"
+      sha256 "94a5d8691930f229f8dae21ef4c21788a02afb5bafe953f2a5789cd95cbc3fbb"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.3.1/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c442d72047dd0a5f6c4e126f9716e7ea1426a1af79affb8672f58aa2059354c7"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.4.0/gh-actions-updater-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "37f8d02085e7260c01efe70b965f49c93cfdb9bea3de98d06987fd742cf8cd8f"
     end
     on_intel do
-      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.3.1/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "18abcdf8050503b6b4c02d60a86b0c1349149f5a74c512354bdb8d544619ad78"
+      url "https://github.com/Goldziher/gh-actions-updater/releases/download/v0.4.0/gh-actions-updater-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2a835d562d87e52d19daa88cf5ee1d480940007b00c66a47978dafa3764a4951"
     end
   end
 
