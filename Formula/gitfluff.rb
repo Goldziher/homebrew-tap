@@ -6,11 +6,11 @@ class Gitfluff < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/Goldziher/gitfluff/releases/download/v0.9.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fba4ccfd5378bedb873406bd66f94fe3ff778bfa1b0cdb882721cf7d3960c818"
-    sha256 cellar: :any,                 arm64_linux:   "a4feaace89e6a0b446a670d3780454f69663b0582e4cd0140400215f498deba4"
-    sha256 cellar: :any,                 x86_64_linux:  "00ffff863a7f45bbc38cd9f408d7bef4a551d2472af438502ddaf7ad43e1a621"
+    root_url "https://github.com/Goldziher/gitfluff/releases/download/v0.10.0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f7f68817257f88965809344d80f964f0da2a43e2fd51d7b95087f60fbd75fdb"
+    sha256 cellar: :any,                 arm64_linux:   "e463f08b5c94e009f63b7cac34427932fb2c2adae7c1e494a5e5145d6dadc6c1"
+    sha256 cellar: :any,                 x86_64_linux:  "4f4f8724ecac1581bbb62cbbb46e49a6ff1ddbf6601ecdedc5800d76d9ce90ef"
   end
 
   depends_on "rust" => :build
