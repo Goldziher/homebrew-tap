@@ -5,17 +5,17 @@
 class Skif < Formula
   desc "Fast dependency linter for JavaScript and TypeScript monorepos"
   homepage "https://github.com/Goldziher/skif"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-aarch64-apple-darwin.tar.gz"
-      sha256 "5ac675457b28c797cba74f9632f31d93e57134578a2f3785f68b12ca96f39d43"
+      url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-aarch64-apple-darwin.tar.gz"
+      sha256 "abd5cf298d3c0e2cdf8fe3842cdbf2306d027366ce37d0c264bcc04980e1a6c6"
     end
     on_intel do
-      url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-x86_64-apple-darwin.tar.gz"
-      sha256 "03980bea11839e6f723ac5af26cd057bec7f13ae3e639520274a18a8913ca466"
+      url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-x86_64-apple-darwin.tar.gz"
+      sha256 "0de8ac6100169fd7a0b7f906f20db2fea8a78d4c5fc6884b0bff013e89160b80"
     end
   end
 
@@ -24,20 +24,20 @@ class Skif < Formula
     glibc_ok = OS::Linux::Glibc.system_version >= Version.new("2.34")
     on_arm do
       if glibc_ok
-        url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-aarch64-unknown-linux-gnu.tar.gz"
-        sha256 "5e22221e04139d8971f0b654f92e29000d212a95d48d0cb5a586476a59b373ab"
+        url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-aarch64-unknown-linux-gnu.tar.gz"
+        sha256 "be468506af73a00feac23cc721a5d1f6b7515397a540c28b7fea9c9fed412fab"
       else
-        url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-aarch64-unknown-linux-musl.tar.gz"
-        sha256 "b435ae1c5fb8ab44d8ea7de51a846b3aa52cac4a9e33dc9b33b27ded455ea907"
+        url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-aarch64-unknown-linux-musl.tar.gz"
+        sha256 "ead15ff12500a5234b63092c37a31d6bfc9ab7d84d2685c460b39579654ec289"
       end
     end
     on_intel do
       if glibc_ok
-        url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-x86_64-unknown-linux-gnu.tar.gz"
-        sha256 "543a081a91f188c41b783506e6551c893c2dbf34aa43115ab81a0419ce9ec450"
+        url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-x86_64-unknown-linux-gnu.tar.gz"
+        sha256 "90dc5586e90d5951f8dbaa2ac496669fbd130274e5f334d9a7beb260468d2e3b"
       else
-        url "https://github.com/Goldziher/skif/releases/download/v0.1.1/skif-x86_64-unknown-linux-musl.tar.gz"
-        sha256 "3a6bbe3a0007fce83cf0c8d3bf14574f37728fca040036166b4a1e279068c789"
+        url "https://github.com/Goldziher/skif/releases/download/v0.2.0/skif-x86_64-unknown-linux-musl.tar.gz"
+        sha256 "814401f10286c967fed78a1509c1876def3d8533f2162562c0c47d86a0d1419a"
       end
     end
   end
