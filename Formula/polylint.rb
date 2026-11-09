@@ -5,13 +5,13 @@
 class Polylint < Formula
   desc "Universal polyglot linter and formatter"
   homepage "https://github.com/Goldziher/polylint"
-  version "0.34.1"
+  version "0.34.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.1/poly-0.34.1-aarch64-apple-darwin.tar.gz"
-      sha256 "0b7d27dae484ad2132a10abfe20054045fc62a420d8eb270e47c9468da2e4402"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-apple-darwin.tar.gz"
+      sha256 "8e7e0af606a57c7c74617fde2422fb58d03211559df930f3d48f06cbbcaaa60a"
     end
     # No Intel macOS archive is published; fail with a stated reason instead of an
     # opaque missing-url error.
@@ -20,12 +20,12 @@ class Polylint < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.1/poly-0.34.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9cf404e99c867a7ff469a60072c80f3f335b4d121d465e99d97e4f5586def815"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1d8136a43c3acd932bd1b5bfac93a69cf7dd0bb4fc6c84b8623c00b2c97b8e9b"
     end
     on_intel do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.1/poly-0.34.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4b63bca067eddae5ee5bed6488845616ee7917bb2b598a9ada17d60450c83777"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bd7293972c42ce172c0f47e848eabe2854d80d60afc163a01bd884d67bc9c1ef"
     end
   end
 
