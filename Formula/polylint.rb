@@ -8,13 +8,11 @@ class Polylint < Formula
   version "0.34.2"
   license "MIT"
 
+  # Homebrew validates the stable URL even on platforms excluded by requirements.
+  url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-apple-darwin.tar.gz"
+  sha256 "8e7e0af606a57c7c74617fde2422fb58d03211559df930f3d48f06cbbcaaa60a"
+
   on_macos do
-    on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-apple-darwin.tar.gz"
-      sha256 "8e7e0af606a57c7c74617fde2422fb58d03211559df930f3d48f06cbbcaaa60a"
-    end
-    # No Intel macOS archive is published; fail with a stated reason instead of an
-    # opaque missing-url error.
     depends_on arch: :arm64
   end
 

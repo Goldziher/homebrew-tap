@@ -8,11 +8,12 @@ class Scythe < Formula
   version "0.20.2"
   license "MIT"
 
+  url "https://github.com/Goldziher/scythe/releases/download/v0.20.2/scythe-aarch64-apple-darwin.tar.gz"
+  sha256 "c65d09d8661b12de399637d2d8e9932542cec149db7e00def11fad9ef0558cd6"
+
+  depends_on :macos
+
   on_macos do
-    on_arm do
-      url "https://github.com/Goldziher/scythe/releases/download/v0.20.2/scythe-aarch64-apple-darwin.tar.gz"
-      sha256 "c65d09d8661b12de399637d2d8e9932542cec149db7e00def11fad9ef0558cd6"
-    end
     on_intel do
       url "https://github.com/Goldziher/scythe/releases/download/v0.20.2/scythe-x86_64-apple-darwin.tar.gz"
       sha256 "7c00b0f40776dc000ad1affc8ef031527221a308ce6fcc83962f85c49b26c671"

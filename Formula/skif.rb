@@ -21,7 +21,8 @@ class Skif < Formula
 
   on_linux do
     # The glibc archives need glibc 2.34; older systems get the static musl archives.
-    glibc_ok = OS::Linux::Glibc.system_version >= Version.new("2.34")
+    # Homebrew can evaluate Linux formulae while running on macOS.
+    glibc_ok = OS.linux? && OS::Linux::Glibc.system_version >= Version.new("2.34")
     on_arm do
       if glibc_ok
         url "https://github.com/Goldziher/skif/releases/download/v0.3.0/skif-aarch64-unknown-linux-gnu.tar.gz"
