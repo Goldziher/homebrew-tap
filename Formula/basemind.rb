@@ -5,36 +5,34 @@
 class Basemind < Formula
   desc "Full AI context layer over MCP — code-map, document RAG, memory, web, git"
   homepage "https://github.com/Goldziher/basemind"
-  version "0.32.0"
+  version "0.33.0"
   license "MIT"
 
   on_macos do
+    # Only Apple Silicon builds are published; Intel Macs get Homebrew's arch message.
+    depends_on arch: :arm64
+
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.32.0/basemind-aarch64-apple-darwin.tar.gz"
-      sha256 "829649b1e2058416b444b0663582f6d559eb7d17aa74eac16a8bfe3dd5196387"
-    end
-    on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.32.0/basemind-x86_64-apple-darwin.tar.gz"
-      sha256 "976705d817a1b754141176bcb0d9f7d209aaedceca30d1879b8997d46b88cf35"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.33.0/basemind-aarch64-apple-darwin.tar.gz"
+      sha256 "dfaa14ff0d5a6950a7730cdab40483620fd5b609c6595e485efb5795a8d29cfb"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.32.0/basemind-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0fbc3188b3f7ee824aacb1d785770e3a64791c49327197ec83e9fa1889e49ac2"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.33.0/basemind-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "38389ab6aef27d3573f91992d88ec631949784a1b9f0c1a0f30ed3344a9bf1fb"
     end
     on_intel do
-      url "https://github.com/Goldziher/basemind/releases/download/v0.32.0/basemind-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2181ff641cdfca6e403a9eb1e4db0d871865da341803b1c027bd1f94ccd7c468"
+      url "https://github.com/Goldziher/basemind/releases/download/v0.33.0/basemind-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4ba262286e7696a23ebdf4652dafebfa76a14420f9a60c5e78e82e0538d07d89"
     end
   end
 
   def install
-    # Archive root holds the binary + lib/ of bundled native libs (plus a co-located
-    # libonnxruntime.dylib on Intel macOS); the binary's rpath resolves lib/ relative
-    # to its own location and ort resolves the ONNX dylib relative to the executable,
-    # so keep them together in libexec and expose the binary on PATH via a symlink.
+    # Archive root holds the binary + lib/ of bundled native libs; the binary's rpath
+    # resolves lib/ relative to its own location, so keep them together in libexec and
+    # expose the binary on PATH via a symlink.
     libexec.install Dir["*"]
     bin.install_symlink libexec/"basemind"
   end
