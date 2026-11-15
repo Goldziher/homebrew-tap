@@ -5,12 +5,12 @@
 class Polylint < Formula
   desc "Universal polyglot linter and formatter"
   homepage "https://github.com/Goldziher/polylint"
-  version "0.34.2"
+  version "0.35.0"
   license "MIT"
 
   # Homebrew validates the stable URL even on platforms excluded by requirements.
-  url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-apple-darwin.tar.gz"
-  sha256 "8e7e0af606a57c7c74617fde2422fb58d03211559df930f3d48f06cbbcaaa60a"
+  url "https://github.com/Goldziher/polylint/releases/download/v0.35.0/poly-0.35.0-aarch64-apple-darwin.tar.gz"
+  sha256 "8a92dfe0b7e27226072294b3eaeb7ab2706744fc73c161de0213e7348d3f1b10"
 
   on_macos do
     depends_on arch: :arm64
@@ -18,19 +18,19 @@ class Polylint < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "1d8136a43c3acd932bd1b5bfac93a69cf7dd0bb4fc6c84b8623c00b2c97b8e9b"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.35.0/poly-0.35.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "d61709fb090622ffc376aecd1dc887db70b3f3b62d17245aad3ccb4bc19e5fbc"
     end
     on_intel do
-      url "https://github.com/Goldziher/polylint/releases/download/v0.34.2/poly-0.34.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "bd7293972c42ce172c0f47e848eabe2854d80d60afc163a01bd884d67bc9c1ef"
+      url "https://github.com/Goldziher/polylint/releases/download/v0.35.0/poly-0.35.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "71ee376b2063c482175019042623110de5adecf1a5eda64903694c2b143bacec"
     end
   end
 
   def install
     bin.install "poly"
     # polylint is an alias for the same executable, not a second binary. The
-    # tool is published as polylint on PyPI and @goldziher/polylint on npm (the
+    # tool is published as polylint on PyPI and @polylint/polylint on npm (the
     # unscoped poly name is taken on both registries), so someone who installed
     # it under that name will reasonably type polylint.
     bin.install_symlink bin/"poly" => "polylint"
